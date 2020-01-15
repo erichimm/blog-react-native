@@ -16,13 +16,21 @@ const IndexScreen = ({ navigation }) => {
                     <View style={styles.row}>
                         <Text style={styles.title}>{item.title} - {item.id}</Text>
                         <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-                            <Feather style={styles.icon} name="trash" />
+                            <Feather style={styles.deleteIcon} name="trash" />
                         </TouchableOpacity>
                     </View>
                 </TouchableOpacity>
             }}
         />
     </View>
+};
+
+IndexScreen.navigationOptions = ({ navigation }) => {
+    return {
+        headerRight: <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+            <Feather style={styles.createIcon} name="plus" size={30} />
+        </TouchableOpacity>
+    };
 };
 
 const styles = StyleSheet.create({
@@ -37,8 +45,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18
     },
-    icon: {
+    deleteIcon: {
         fontSize: 24
+    },
+    createIcon: {
+        marginRight: 15
     }
 });
 
