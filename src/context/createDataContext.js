@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 
 /** 
- * @description Helper function for creating contexts. This mimics some of Redux functionality.
+ * @description Helper function for creating contexts. This mimics some Redux functionality.
  * @param reducer The reducer function that manages this context's state
  * @param actions An object containing the actions used to modify this context's state
  * @param initialState The initial state of this context
