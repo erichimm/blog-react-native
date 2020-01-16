@@ -28,7 +28,9 @@ const addBlogPost = dispatch => {
     return (title, content, navigate) => {
         dispatch({ type: 'add_blogpost', payload: { title, content } });
         // call the navigate function passed in after sucessfuly adding blogpost
-        navigate();
+        if(navigate) {
+            navigate();
+        }
     };
 };
 
@@ -42,7 +44,9 @@ const editBlogPost = dispatch => {
     return (id, title, content, navigate) => {
         dispatch({ type: 'edit_blogpost', payload: { id, title, content } });
         // call the navigate function passed in after sucessfuly editing blogpost
-        navigate();
+        if(navigate) {
+            navigate();
+        }
     }
 }
 
