@@ -16,9 +16,15 @@ const ShowScreen = ({ navigation }) => {
 
 ShowScreen.navigationOptions = ({ navigation }) => {
     return {
-        headerRight: <TouchableOpacity onPress={() => navigation.navigate('Edit')}>
-            <FontAwesome style={styles.editIcon} name="pencil" size={30} />
-        </TouchableOpacity>
+        headerRight: (
+            <TouchableOpacity 
+                onPress={() => 
+                    navigation.navigate('Edit', { id: navigation.getParam('id') })
+                }
+            >
+                <FontAwesome style={styles.editIcon} name="pencil" size={30} />
+            </TouchableOpacity>
+        )
     };
 }
 
